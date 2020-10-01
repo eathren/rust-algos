@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 
 // This problem was recently asked by Google.
 
@@ -18,17 +20,10 @@ fn main() {
     for i in 0..numbers.len(){
         for j in (i+1)..numbers.len(){
             if numbers[j] == k - numbers[i]{
-                return println!("Success! \n{} & {} add up to {}", numbers[i], numbers[j],k);
+                return println!("{} & {} add up to {}", numbers[i], numbers[j],k);
             }
         }
     }
-
-    
-
-  
-
- 
-
 
 }
 
