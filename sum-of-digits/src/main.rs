@@ -35,13 +35,13 @@ fn digital_root(n: i64) -> i64  {
         n
       }
       // convert n to string, split into chars, iterate over the string, 
-      // Unwrap and sum the int. Return.
+      // Unwrap, map, turn the string chars into ints, and sum them. Return.
       else {
           digital_root(n.to_string().chars().into_iter().map(|c| c.to_digit(10).unwrap() as i64).sum())
       }
   }
 
-  #[cfg(test)]
+#[cfg(test)]
 mod tests {
     use super::*;
     
