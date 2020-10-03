@@ -2,10 +2,10 @@
 
 #### To test any rust algo:
 
-clone the repo with git clone https://github.com/eathren/rust-algos.git (if using https)
-Make sure Rust / Cargo is installed. if it's not, you can [install it here](https://www.rust-lang.org/tools/install)
-cd into the folder containing the specific algo you want to modify / test
-and run <cargo test> in the terminal.
+clone the repo with git clone https://github.com/eathren/rust-algos.git (if using https)  
+Make sure Rust / Cargo is installed. if it's not, you can [install it here](https://www.rust-lang.org/tools/install)  
+cd into the folder containing the specific algo you want to modify / test  
+and run <code>cargo test</code> in the terminal.  
 
 |   #	|   Title	|    Difficulty 	|   
 |---	|--------	|-----------------|
