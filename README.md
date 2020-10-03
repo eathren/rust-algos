@@ -8,8 +8,9 @@ cargo run (to run the main function)
 or  
 cargo test. Some of the items are ran using cargo run, but I am transitioning those to use cargo test as well. 
 
-|   	|   	|   	|   	|   	|
-|---	|---	|---	|---	|---	|
-|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|
-|   	|   	|   	|   	|   	|
+|   #	|   Title	|  Solution 	|  Difficulty 	|   
+|---	|--------	|-------------|---------------|
+|   	|        	|           	|             	|   	
+|   	|        	|           	|             	|   	
+|   	|        	|           	|             	|   	
+|   	|        	|           	|             	|   	
