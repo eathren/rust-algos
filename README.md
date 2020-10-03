@@ -8,9 +8,9 @@ cargo run (to run the main function)
 or  
 cargo test. Some of the items are ran using cargo run, but I am transitioning those to use cargo test as well. 
 
-|   #	|   Title	|  Solution 	|  Difficulty 	|   
-|---	|--------	|-------------|---------------|
-|   	|        	|           	|             	|   	
-|   	|        	|           	|             	|   	
-|   	|        	|           	|             	|   	
-|   	|        	|           	|             	|   	
+|   #	|   Title	|    Difficulty 	|   
+|---	|--------	|-----------------|
+|   4 |        	|           	|        	
+|   3	|        	|           	|  
+|   2	|    [Sum of Digits](https://github.com/eathren/rust-algos/tree/master/sum-of-digits)    	|           	|        	
+|   1	|     [Add up to K]   	|         6     	|   	
