@@ -10,6 +10,8 @@ cd into the folder containing the specific algo you want to modify / test
 
 Run <code>cargo test</code> in the terminal.  
 
+Difficulty is on a 1 - 10 scale. One being the harder, and 10 easier. 
+
 |   #	|   Title	|    Difficulty 	|   
 |---	|--------	|-----------------|
 | 5   | [Multiples of 3 and 5](https://github.com/eathren/rust-algos/tree/master/multiples-of-3-or-5) | 6 |
