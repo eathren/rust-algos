@@ -1,8 +1,10 @@
 ## Repo containing rust algo answers and breakdown of problems into chunks. 
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 #### To test any rust algo:
 
-clone the repo  
+clone the repo. If you're not sure  how, [read how to do so here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 Make sure Rust / Cargo is installed. if it's not, you can [install it here](https://www.rust-lang.org/tools/install)  
 
