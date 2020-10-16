@@ -61,65 +61,75 @@
 // step 3, iterate over the new int vec, and compare the values. Apply first logic of positive or negative values, and sum it
 // step 4, return the sum
 
-fn roman_to_int(s: String)  {
+// We have two states. One where first number is greater than second, and then one where second is greater than first.
+pub enum State {
+    Default,
+    S0,
+    S1
+  }
+
+// use match case, turn roman numerals to an int value
+  pub fn char_to_int(c: char) -> i32 {
+    match c {
+      'I' => 1,
+      'V' => 5,
+      'X' => 10,
+      'L' => 50,
+      'C' => 100,
+      'D' => 500,
+      'M' => 1000,
+        // _ denotes "everything else" that is not matched. 
+      _ => 0,
+    }
+  }
   
-    
+//   impl Solution {
+    pub fn roman_to_int(s: String) -> i32 {
+      // You can read more about rust options here https://doc.rust-lang.org/std/option/
+      let mut last_value: Option<i32> = None;
 
-    // let split_string : Vec<&str> =  s.chars().collect();
-    let mut number = 0;
-    let v: Vec<&str> = s.split("").collect();
-    let mut num_vec: Vec<i32> = Vec::new();
-    for s in v {
-        match s  {
-            "I" =>  num_vec.push(1),
-            "V"=>  num_vec.push(5),
-            "X" =>  num_vec.push(10),
-            "L" =>  num_vec.push(50),
-            "C" =>  num_vec.push(100),
-            "D" =>  num_vec.push(500),
-            "M" =>  num_vec.push(1000),
-            _ => println!("{} is not equal to any of these values", s)
-            
+      // no numbers are called yet, so we initialize state as Default.
+      let mut state = State::Default;
+
+      let mut sum: i32 = 0;
+      for s in s.chars().rev() {
+        let value = char_to_int(s);
+        match state {
+          State::Default => {
+            state = State::S0;
+            sum += value;
+          },
+          State::S0 => {
+            if value >= last_value.unwrap() {
+              sum += value;
+            } else {
+              sum -= value;
+              state = State::S1;
+            }
+          },
+          State::S1 => {
+            if value >= last_value.unwrap() {
+              sum += value;
+              state = State::S0;
+            } else {
+              panic!("Invalid input.");
+            }
+          }
         }
-        println!("{}", s);
+        last_value.replace(value);
+      }
+      sum
     }
 
-    println!("{:?}", num_vec);
-    println!("{}", num_vec[1]);
 
-    let mut final_number:i32 = 0;
+// }
 
-    for i in 0..num_vec.len(){
+
+
+     
         
-        let j = i + 1;
-        if final_number == 0 && num_vec[i] >= num_vec[j]  {
-            final_number +=    num_vec[i] + num_vec[j];
-            println!("0. Greater than. Final number is {}", final_number);
-            continue;
-        }
-        else if final_number >  0 && num_vec[i] >= num_vec[j]{
-            println!("{}, {}", num_vec[i], num_vec[j]);
-            final_number +=    num_vec[j];
-            println!(">0. Greater than. Final number is {}", final_number);
-            continue;
-        }
-        else if final_number >  0 && num_vec[i] < num_vec[j]{
-            println!("{}, {}", num_vec[i], num_vec[j]);
-            final_number -=    num_vec[j];
-            println!("{}", final_number);
-            continue;
-        }
-        else if j >= num_vec.len(){
-             final_number;
-        }
-            
-    }
-    println!("{}", final_number)
-    // let vec = split.collect::<Vec<&str>>();
-}
 
 fn main(){
-    roman_to_int("XVII".to_string());
 }
 
 
@@ -129,6 +139,14 @@ mod tests {
     
     #[test]
     fn returns_expected() {
-      assert_eq!( roman_to_int("xv".to_string()), 15);
+      assert_eq!( roman_to_int("XV".to_string()), 15);
+      assert_eq!( roman_to_int("LXVII".to_string()), 67);
+      assert_eq!( roman_to_int("IV".to_string()), 4);
+      assert_eq!( roman_to_int("MCMXCIV".to_string()), 1994);
     }    
 }
+
+// https://leetcode.com/problems/roman-to-integer/
+
+//  notes and tips
+// it seems that in rust, ' ' is used for chars, and " " is for strings. THis caused a hangup in my match case setup.
