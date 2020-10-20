@@ -16,7 +16,7 @@ Difficulty is on a 1 - 10 scale. One being the harder, and 10 easier.
 
 | #   | Title                                                                                         | Difficulty |
 | --- | --------------------------------------------------------------------------------------------- | ---------- |
-| 7   | [Roman-To-Interger]https://github.com/eathren/rust-algos/tree/master/roman-to-interger/src)                       | 5-6        |
+| 7   | [Roman-To-Interger](https://github.com/eathren/rust-algos/tree/master/roman-to-interger/src)                       | 5-6        |
 | 6   | [palindrome-checker](https://github.com/eathren/rust-algos/tree/master/palindrome-checker)    | 6          |
 | 5   | [Multiples of 3 and 5](https://github.com/eathren/rust-algos/tree/master/multiples-of-3-or-5) | 6          |
 | 4   | [Bouncing Ball](https://github.com/eathren/rust-algos/tree/master/bouncing-balls)             | 6          |
